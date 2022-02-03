@@ -1,25 +1,39 @@
-import logo from './logo.svg';
 import './App.css';
+
+function handleSubmit(e){
+  e.preventDeafult();
+  let weight = 0;
+  if(gender == male){
+    
+  }
+}
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <form>
+      <div>
+        <label>Body Weight (kg)</label>
+        <input type="number" onChange={e => setWeight(e.target.value)} />
+      </div>
+      <div>
+        <label>Amount of Alcohol Consumed(33cl bottles)</label>
+        <input type="text" />
+      </div>
+      <div>
+        <label>Gender:</label>
+        <label> <input type="radio" name="gender" defaultChecked onChange={e => setGender(e.target.value)} />Male</label>
+        <label> <input type="radio" name="gender" onChange={e => setGender(e.target.value)} />Female</label>
+      </div>
+      <div>
+        <label>Time Since First Drink:</label> <input type="text" />
+      </div>
+      <input type="submit" />
+    </form>
   );
 }
 
+
+
 export default App;
+
