@@ -42,19 +42,19 @@ function App() {
         <label>Amount of Alcohol Consumed (33cl bottles): </label>
         <input type="number" value={drinks} onChange={e => setDrinks(e.target.value)} />
       </div>
-      <div>
+      <div id="container">
         <label>Gender:</label>
-        <label> <input type="radio" name='gender' value="male" defaultChecked onChange={e => setGender(e.target.value)} />Male</label>
-        <label> <input type="radio" name='gender' value="female" onChange={e => setGender(e.target.value)} />Female</label>
+        <label> <input type="radio" class="radio" name='gender' value="male" defaultChecked onChange={e => setGender(e.target.value)} />Male</label>
+        <label> <input type="radio" class="radio" name='gender' value="female" onChange={e => setGender(e.target.value)} />Female</label>
       </div>
       <div>
         <label>Time Since First Drink (hours):</label> <input type="number" value={time} onChange={e => setTime(e.target.value)} />
       </div>
-      <div>
-        <label>Your Blood Alcohol Concentration (per mil): </label>
+      <div id="bacresult">
+        <label>Your BAC (per mil): </label>
         <output>{result.toFixed(2)}</output>
       </div>
-      <button>Submit</button>
+      <button>Calculate</button>
     </form>
   );
 }
