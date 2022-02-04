@@ -52,7 +52,7 @@ function App() {
       </div>
       <div id="bacresult">
         <label>Your BAC (per mil): </label>
-        <output>{result.toFixed(2)}</output>
+        <output>{result.toFixed(2)}%</output>
       </div>
       <button>Calculate</button>
     </form>
@@ -60,4 +60,3 @@ function App() {
 }
 
 export default App;
-
