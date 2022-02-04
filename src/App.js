@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import './App.css';
 
-
 function App() {
   const [weight, setWeight] = useState(0);
   const [drinks, setDrinks] = useState(0);
@@ -9,13 +8,10 @@ function App() {
   const [time, setTime] = useState(0);
   const [result, setResult] = useState(0);
 
+  //calculates blood alcohol concentration % per mill
   function calculate(e) {
     e.preventDefault();
     let BAC = 3;
-    /*litres: bottles * 0.33
-    grams: litres * 8 * 4.5
-    burning: weight / 10
-    grams(left): grams – (burning * time)*/
     let liters = drinks * 0.33;
     let grams = liters * 8 * 4.5;
     let burning = weight / 10;
@@ -34,8 +30,7 @@ function App() {
     }
   }
 
-
-
+  //site content
   return (
     <form onSubmit={calculate}>
       <h3>Blood Alcohol Concentration Caculator</h3>
@@ -56,7 +51,7 @@ function App() {
         <label>Time Since First Drink (hours):</label> <input type="number" value={time} onChange={e => setTime(e.target.value)} />
       </div>
       <div>
-        <label>Your Blood Alcohol Concentration: </label>
+        <label>Your Blood Alcohol Concentration (per mil): </label>
         <output>{result.toFixed(2)}</output>
       </div>
       <button>Submit</button>
